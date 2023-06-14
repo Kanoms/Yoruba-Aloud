@@ -1,0 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=Short+Stack&display=swap");
+
+html {
+  font-size: clamp(1rem, 0.75rem + 1.5vw, 2rem);
+}
+
+body {
+  overflow-x: hidden;
+}
+
+$YA-ff: "Short Stack", cursive;
+
+$YA-Heading: 33px;
+$YA-Subheading: 22px;
+$YA-Body: 18px;
+$YA-Body-Small: 14px;
+$YA-Body-XSmall: 12px;
+
+$YA-mainTheme: #4594e1;
+$YA-mainTheme-light: #66a4e37b;
+$YA-white: #fff;
+$YA-black: #01010a;
+$YA-Real-black: #01010a;
+$YA-grey: #f2f2f2;

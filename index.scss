@@ -1,0 +1,144 @@
+@import "./components/mediaqueries";
+@import "./components/mixins";
+@import "./components/reset";
+@import "./components/typography";
+
+body {
+  overflow-x: hidden;
+  font-family: $YA-ff;
+  background-color: $YA-mainTheme;
+  font-size: $YA-Body;
+  main {
+    height: 100vh;
+    @include YA-Grid-Col-2;
+    color: $YA-white;
+    @include respond(small) {
+      grid-template-columns: 100%;
+    }
+    @include respond(medium) {
+      grid-template-columns: 100%;
+    }
+    .welcome_img {
+      width: 100%;
+      height: 100%;
+      @include respond(small) {
+        padding: 2rem;
+      }
+      @include respond(medium) {
+        padding: 2rem;
+      }
+      @include YA-FLex;
+      flex-direction: column;
+      p {
+        text-align: center;
+        width: 65%;
+        line-height: 1.5;
+        margin-top: 35px;
+      }
+    }
+
+    .form_container {
+      width: 100%;
+      height: 100%;
+      padding: 2.5rem;
+      @include respond(small) {
+        padding: 1.5rem;
+      }
+      color: $YA-black;
+      background-image: url("./assets/skin.png");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      h1 {
+        font-size: $YA-Heading;
+        text-align: center;
+        font-weight: lighter;
+        margin-bottom: 1.5rem;
+      }
+      form {
+        background-color: $YA-mainTheme-light;
+        padding: 2rem;
+        @include respond(small) {
+          padding: 1rem;
+        }
+        border-radius: 15px;
+        font-weight: 300;
+        box-shadow: 0px 0px 25px 8px rgba(0, 0, 0, 0.1);
+        p {
+          @include YA-FLex;
+          flex-direction: column;
+          align-items: start;
+
+          &:nth-child(2) {
+            margin-top: 15px;
+            margin-bottom: 25px;
+          }
+
+          &:last-of-type {
+            @include YA-FLex;
+            font-size: $YA-Body-Small;
+            margin-top: 25px;
+            width: 100%;
+            line-height: 1.7;
+            a {
+              text-decoration: underline;
+              text-underline-offset: 6px;
+            }
+          }
+          label {
+            font-size: $YA-Body;
+            font-weight: 200;
+            margin-bottom: 15px;
+          }
+          input {
+            width: 100%;
+            border: none;
+            outline: none;
+            padding: 10px 18px;
+            border-radius: 5px;
+            &::placeholder {
+              font-size: $YA-Body-Small;
+            }
+          }
+        }
+        button {
+          width: 100%;
+          padding: 10px 18px;
+          cursor: pointer;
+          background: $YA-mainTheme;
+          border: none;
+          outline: none;
+          color: $YA-white;
+          transition: all 0.2s ease;
+
+          &:hover {
+            box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.1);
+          }
+        }
+      }
+    }
+  }
+}
+
+// Special Class
+.pulse {
+  transform: scale(1);
+  animation: pulse-black 2s infinite;
+}
+
+@keyframes pulse-black {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(250, 250, 250, 0.7);
+  }
+
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(250, 250, 250, 0.1);
+  }
+
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(250, 250, 250, 0.7);
+  }
+}

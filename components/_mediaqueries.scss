@@ -1,0 +1,28 @@
+// Variables for breakpoints
+$smart-phones: 768px;
+$tablets: 991px;
+$laptops: 1023px;
+$desktops: 1200px;
+
+@mixin respond($breakpoint) {
+  @if ($breakpoint == small) {
+    @media (max-width: $smart-phones) {
+      @content;
+    }
+  }
+  @if ($breakpoint == medium) {
+    @media (max-width: $tablets) {
+      @content;
+    }
+  }
+  @if ($breakpoint == large) {
+    @media (max-width: $laptops) {
+      @content;
+    }
+  }
+  @if ($breakpoint == larger) {
+    @media (max-width: $desktops) {
+      @content;
+    }
+  }
+}

@@ -1,0 +1,14 @@
+
+
+@mixin YA-FLex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin YA-Grid-Col-2 {
+  display: grid;
+  place-items: center center;
+  grid-template-columns: 45% 55%;
+  grid-template-rows: auto;
+}
