@@ -1,4 +1,4 @@
-const signIn = document.getElementById("signin");
+const signIn = document.getElementById("signIn");
 
 signIn.textContent = "Sign In";
 
