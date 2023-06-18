@@ -4,8 +4,137 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Admin Dashboard</title>
+
+    <!-- Style Sheet -->
+
+    <link rel="stylesheet" href="dashboard.css" />
+
+    <!-- Font Awesome -->
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- BOXICONS -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <h1>Admin Dashboard</h1>
+    <main>
+      <section class="navigation">
+        <div class="container">
+          <ul>
+            <li>
+              <a href="">
+                <span class="icon"
+                  ><i class="fab fa-odnoklassniki fa-lg"></i
+                ></span>
+                <span class="title">Yoruba Aloud</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="">
+                <span class="icon"><i class="bx bx-home"></i></span>
+                <span class="title">Dashboard</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="">
+                <span class="icon"><i class="bx bx-category"></i></span>
+                <span class="title">Catergories</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="">
+                <span class="icon"><i class="bx bx-book-content"></i></span>
+                <span class="title">Learning Materials</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="">
+                <span class="icon"><i class="bx bx-certification"></i></span>
+                <span class="title">Quiz</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="">
+                <span class="icon"><i class="bx bxs-id-card"></i></span>
+                <span class="title">Admin Profile</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="">
+                <span class="icon"><i class="bx bxs-log-out-circle"></i></span>
+                <span class="title">Logout</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <div class="container">
+          <div class="sec-header">
+            <i class="bx bx-menu"></i>
+
+            <h3></h3>
+          </div>
+
+          <div class="grid">
+            <div>
+              <i class="bx bx-library"></i>
+
+              <p>Total Catergories</p>
+
+              <span>2</span>
+            </div>
+            <div>
+              <i class="bx bx-book-content"></i>
+
+              <p>Learning Materials</p>
+
+              <span>12</span>
+            </div>
+            <div>
+              <i class="bx bx-library"></i>
+
+              <p>Total Sub-Catergories</p>
+
+              <span>37</span>
+            </div>
+            <div>
+              <i class="bx bx-certification"></i>
+
+              <p>Total Quiz</p>
+
+              <span>0</span>
+            </div>
+            <div>
+              <i class="bx bxs-graduation"></i>
+
+              <p>Total Students</p>
+
+              <span>9</span>
+            </div>
+            <div>
+              <button>Top Three Students</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- SCRIPT  -->
+
+    <script src="dashboard.js"></script>
   </body>
 </html>

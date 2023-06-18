@@ -1,0 +1,130 @@
+@import "./components/mediaqueries";
+@import "./components/mixins";
+@import "./components/reset";
+@import "./components/typography";
+
+body {
+  font-family: $YA-ff;
+  font-size: $YA-Body;
+
+  main {
+    display: flex;
+    gap: 0rem;
+
+    section {
+      &:first-of-type {
+        padding: 1rem 0.8rem;
+        background-color: $YA-mainTheme;
+        height: 100vh;
+        color: $YA-white;
+        width: 350px;
+
+        @include respond(large) {
+          width: 200px;
+        }
+
+        .container {
+          ul {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-direction: column;
+
+            li {
+              &:first-of-type {
+                margin-bottom: 3rem;
+                gap: 30px;
+                font-size: larger;
+
+                a {
+                  display: flex;
+                  align-items: center;
+                  gap: 1rem;
+                }
+              }
+
+              a {
+                display: flex;
+                align-items: center;
+                gap: 0.7rem;
+              }
+            }
+          }
+        }
+      }
+
+      &:last-of-type {
+        color: $YA-mainTheme;
+        width: 100%;
+        padding: 1rem;
+
+        .container {
+          @include YA-FLex-2;
+          flex-direction: column;
+          gap: 3rem;
+
+          @include respond(small) {
+            padding: 0px 1rem;
+          }
+
+          .sec-header {
+            display: flex;
+            font-size: x-large;
+          }
+
+          .grid {
+            display: grid;
+            align-items: center;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            gap: 1.5rem;
+
+            @include respond(medium) {
+              display: grid;
+              grid-template-columns: repeat(2, 1fr);
+              grid-template-rows: repeat(3, 1fr);
+            }
+
+            @include respond(small) {
+              display: flex;
+              flex-direction: column;
+              gap: 1.5rem;
+            }
+
+            div {
+              height: 5rem;
+              border: $YA-grey 1px solid;
+              border-radius: 8px;
+              padding: 1rem;
+              @include YA-FLex-2;
+              flex-direction: column;
+              box-shadow: 0px 20px 10px rgba(93, 93, 94, 0.2);
+              border-top: none;
+
+              @include respond(small) {
+                width: 100%;
+              }
+
+              span {
+                color: black;
+              }
+
+              &:last-of-type {
+                @include YA-FLex;
+
+                button {
+                  padding: 0.5rem;
+                  background-color: $YA-mainTheme;
+                  color: $YA-white;
+                  border: none;
+                  outline: none;
+                  border-radius: 8px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
