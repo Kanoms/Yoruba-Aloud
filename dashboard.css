@@ -344,4 +344,60 @@ body main section:last-of-type .container .grid div:last-of-type button:hover {
 }
 body main section:last-of-type .container .grid div:last-of-type button:active {
   background-color: rgba(69, 147, 225, 0.8352941176);
+}
+
+li.hovered {
+  color: #4594e1;
+  background-color: white;
+}
+li.hovered:first-child {
+  pointer-events: none;
+}
+li.hovered a {
+  color: #4594e1;
+}
+li.hovered a::before {
+  box-shadow: 35px 35px 0px #fff;
+  content: "";
+  position: absolute;
+  right: 0;
+  top: -50px;
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  border-radius: 50%;
+  pointer-events: none;
+  box-shadow: 35px 35px 0px 10px #fff;
+}
+li.hovered a::after {
+  box-shadow: 35px 35px 0px #fff;
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -50px;
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  border-radius: 50%;
+  pointer-events: none;
+  box-shadow: 35px -35px 0px 10px #fff;
+}
+li.hovered a .icon {
+  color: #4594e1;
+}
+li.hovered a .title {
+  color: #4594e1;
+}
+
+.active {
+  display: flex;
+}
+.active section:first-of-type {
+  width: 2rem;
+}
+.active section:first-of-type .container {
+  width: 2rem;
+}
+.active section:first-of-type .container ul li a {
+  gap: 2rem;
 }/*# sourceMappingURL=dashboard.css.map */
