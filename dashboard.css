@@ -165,43 +165,99 @@ body {
 body {
   font-family: "Short Stack", cursive;
   font-size: 18px;
+  overflow-x: hidden;
 }
 body main {
-  display: flex;
-  gap: 0rem;
+  display: grid;
+  grid-template-columns: 300px calc(100% - 300px);
+  gap: 0px;
 }
 body main section:first-of-type {
-  padding: 1rem 0.8rem;
-  background-color: #4594e1;
+  position: relative;
+  width: 100%;
   height: 100vh;
-  color: #fff;
-  width: 350px;
+  background-color: #4594e1;
 }
-@media (max-width: 1023px) {
-  body main section:first-of-type {
-    width: 200px;
-  }
+body main section:first-of-type .container {
+  position: fixed;
+  height: 100%;
+  background-color: #4594e1;
+  overflow: hidden;
+  width: 300px;
+  margin-left: 0.5rem;
 }
 body main section:first-of-type .container ul {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  flex-direction: column;
+  position: absolute;
+  top: 0.5rem;
+  left: 0rem;
+  width: 100%;
 }
-body main section:first-of-type .container ul li:first-of-type {
-  margin-bottom: 3rem;
-  gap: 30px;
+body main section:first-of-type .container ul li {
+  position: relative;
+  width: 100%;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+body main section:first-of-type .container ul li:hover {
+  color: #4594e1;
+  background-color: white;
+}
+body main section:first-of-type .container ul li:hover a {
+  color: #4594e1;
+}
+body main section:first-of-type .container ul li:hover a::before {
+  box-shadow: 35px 35px 0px #fff;
+  content: "";
+  position: absolute;
+  right: 0;
+  top: -50px;
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  border-radius: 50%;
+  pointer-events: none;
+  box-shadow: 35px 35px 0px 10px #fff;
+}
+body main section:first-of-type .container ul li:hover a::after {
+  box-shadow: 35px 35px 0px #fff;
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -50px;
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  border-radius: 50%;
+  pointer-events: none;
+  box-shadow: 35px -35px 0px 10px #fff;
+}
+body main section:first-of-type .container ul li:first-child {
+  margin-bottom: 4rem;
+}
+body main section:first-of-type .container ul li:first-child:hover {
+  pointer-events: none;
+}
+body main section:first-of-type .container ul li:first-child a {
   font-size: larger;
 }
-body main section:first-of-type .container ul li:first-of-type a {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
+body main section:first-of-type .container ul li:first-child a:hover {
+  color: white;
 }
 body main section:first-of-type .container ul li a {
+  width: 100%;
+  position: relative;
   display: flex;
   align-items: center;
-  gap: 0.7rem;
+  gap: 0.5rem;
+  color: #fff;
+  padding: 0.5rem 0rem;
+}
+body main section:first-of-type .container ul li a .icon {
+  position: relative;
+}
+body main section:first-of-type .container ul li a .title {
+  position: relative;
+  white-space: nowrap;
 }
 body main section:last-of-type {
   color: #4594e1;
@@ -212,7 +268,7 @@ body main section:last-of-type .container {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  gap: 3rem;
+  gap: 3.5rem;
 }
 @media (max-width: 768px) {
   body main section:last-of-type .container {
@@ -222,6 +278,9 @@ body main section:last-of-type .container {
 body main section:last-of-type .container .sec-header {
   display: flex;
   font-size: x-large;
+}
+body main section:last-of-type .container .sec-header i {
+  cursor: pointer;
 }
 body main section:last-of-type .container .grid {
   display: grid;
@@ -245,19 +304,21 @@ body main section:last-of-type .container .grid {
   }
 }
 body main section:last-of-type .container .grid div {
-  height: 5rem;
+  height: 100%;
   border: #f2f2f2 1px solid;
   border-radius: 8px;
   padding: 1rem;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
+  gap: 0.5rem;
   box-shadow: 0px 20px 10px rgba(93, 93, 94, 0.2);
   border-top: none;
 }
 @media (max-width: 768px) {
   body main section:last-of-type .container .grid div {
     width: 100%;
+    padding: 1rem;
   }
 }
 body main section:last-of-type .container .grid div span {
