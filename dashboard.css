@@ -186,6 +186,11 @@ body main section:first-of-type .container {
   width: 300px;
   margin-left: 0.5rem;
 }
+@media (max-width: 768px) {
+  body main section:first-of-type .container {
+    margin-left: 1rem;
+  }
+}
 body main section:first-of-type .container ul {
   position: absolute;
   top: 0.5rem;
@@ -197,6 +202,9 @@ body main section:first-of-type .container ul li {
   width: 100%;
   border-top-left-radius: 30px;
   border-bottom-left-radius: 30px;
+}
+body main section:first-of-type .container ul li:first-of-type {
+  pointer-events: none;
 }
 body main section:first-of-type .container ul li:hover {
   color: #4594e1;

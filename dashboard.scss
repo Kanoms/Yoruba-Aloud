@@ -28,6 +28,10 @@ body {
           width: 300px;
           margin-left: 0.5rem;
 
+          @include respond(small) {
+            margin-left: 1rem;
+          }
+
           ul {
             position: absolute;
             top: 0.5rem;
@@ -39,6 +43,10 @@ body {
               width: 100%;
               border-top-left-radius: 30px;
               border-bottom-left-radius: 30px;
+
+              &:first-of-type {
+                pointer-events: none;
+              }
 
               &:hover {
                 color: $YA-mainTheme;

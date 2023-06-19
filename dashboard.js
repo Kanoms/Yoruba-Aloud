@@ -20,6 +20,11 @@ for (const list of lists) {
 let toggle = document.querySelector(".bx-menu");
 let main = document.querySelector("main");
 
+// Add "active" class for screens medium and below
+if (window.matchMedia("(max-width: 992px)").matches) {
+  main.classList.add("active");
+}
+
 toggle.addEventListener("click", function () {
   main.classList.toggle("active");
 });
