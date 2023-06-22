@@ -28,3 +28,8 @@ if (window.matchMedia("(max-width: 992px)").matches) {
 toggle.addEventListener("click", function () {
   main.classList.toggle("active");
 });
+
+const learnMat = document.getElementById("learnMat");
+if (window.matchMedia("(max-width: 768px)").matches) {
+  learnMat.textContent = "Learning Mat.";
+}

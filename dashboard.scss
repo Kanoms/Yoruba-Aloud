@@ -13,12 +13,21 @@ body {
     grid-template-columns: 300px calc(100% - 300px);
     gap: 0px;
 
+    @include respond(small) {
+      grid-template-columns: 200px calc(100% - 200px);
+    }
+
     section {
       &:first-of-type {
         position: relative;
         width: 100%;
         height: 100vh;
         background-color: $YA-mainTheme;
+
+        @include respond(small) {
+          position: relative;
+          height: auto;
+        }
 
         .container {
           position: fixed;
@@ -29,7 +38,9 @@ body {
           margin-left: 0.5rem;
 
           @include respond(small) {
-            margin-left: 1rem;
+            left: -0.5rem;
+            width: 200px;
+            height: 200%;
           }
 
           ul {
@@ -37,6 +48,10 @@ body {
             top: 0.5rem;
             left: 0rem;
             width: 100%;
+
+            @include respond(small) {
+              left: 2px;
+            }
 
             li {
               position: relative;
@@ -56,7 +71,6 @@ body {
                   color: $YA-mainTheme;
 
                   &::before {
-                    box-shadow: 35px 35px 0px $YA-white;
                     content: "";
                     position: absolute;
                     right: 0;
@@ -109,6 +123,13 @@ body {
                 color: $YA-white;
                 padding: 0.5rem 0rem;
 
+                span {
+                  @include respond(small) {
+                    position: absolute;
+                    left: 0.5rem;
+                  }
+                }
+
                 .icon {
                   position: relative;
                 }
@@ -116,6 +137,16 @@ body {
                 .title {
                   position: relative;
                   white-space: nowrap;
+
+                  @include respond(small) {
+                    width: 50%;
+                    height: auto;
+
+                    span {
+                      top: 1rem;
+                      left: 0px;
+                    }
+                  }
                 }
               }
             }
@@ -135,6 +166,8 @@ body {
 
           @include respond(small) {
             padding: 0px 1rem;
+            position: absolute;
+            width: calc(100% - 4rem);
           }
 
           .sec-header {
@@ -163,6 +196,7 @@ body {
               display: flex;
               flex-direction: column;
               gap: 1.5rem;
+              align-items: start;
             }
 
             div {
@@ -179,6 +213,7 @@ body {
               @include respond(small) {
                 width: 100%;
                 padding: 1rem;
+                position: relative;
               }
 
               span {
@@ -270,8 +305,16 @@ li.hovered {
     &:first-of-type {
       width: 2rem;
 
+      @include respond(small) {
+        width: 2.5rem;
+      }
+
       .container {
         width: 2rem;
+
+        @include respond(small) {
+          width: 2.5rem;
+        }
 
         ul {
           li {
