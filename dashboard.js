@@ -78,19 +78,19 @@ function fetchDashboardData() {
       getCategory.innerHTML = `${result.total_number_of_categories}`;
 
       const getLearningMaterials = document.getElementById("learningMaterials");
-      getLearningMaterials.innerHTML = `${result.total_number_of_learning_materials}`;
+      getLearningMaterials.innerHTML = `${result.total_number_of_learningmaterial}`;
 
       const getSubCategories = document.getElementById("subCategories");
-      getSubCategories.innerHTML = `${result.total_number_of_sub_categories}`;
+      getSubCategories.innerHTML = `${result.total_number_of_categories}`;
 
       const getTotalQuiz = document.getElementById("totalQuiz");
-      getTotalQuiz.innerHTML = `${result.total_number_of_quizzes}`;
+      getTotalQuiz.innerHTML = `${result.total_number_of_quize}`;
 
       const getTotalStudents = document.getElementById("totalStudents");
       getTotalStudents.innerHTML = `${result.total_number_of_students}`;
 
       const getAdminUsername = document.getElementById("adminUsername");
-      getAdminUsername.innerHTML = `${tokenAcquired.username}`;
+      getAdminUsername.innerHTML = `${result.admin_name}`;
 
       // STEP 13
       pageModal.style.display = "none";

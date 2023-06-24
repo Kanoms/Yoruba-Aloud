@@ -455,4 +455,18 @@ li.hovered a .title {
 }
 .active section:first-of-type .container ul li a {
   gap: 2rem;
+}
+
+#pageModal,
+#studentModal,
+.table {
+  position: absolute;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+#pageModal svg,
+#studentModal svg,
+.table svg {
+  display: none;
 }/*# sourceMappingURL=dashboard.css.map */

@@ -95,39 +95,110 @@
 
               <p>Total Catergories</p>
 
-              <span>2</span>
+              <span id="category"></span>
             </div>
             <div>
               <i class="bx bx-book-content"></i>
 
               <p>Learning Materials</p>
 
-              <span>12</span>
+              <span id="learningMaterials"></span>
             </div>
             <div>
               <i class="bx bx-library"></i>
 
               <p>Total Sub-Catergories</p>
 
-              <span>37</span>
+              <span id="subCategories"></span>
             </div>
             <div>
               <i class="bx bx-certification"></i>
 
               <p>Total Quiz</p>
 
-              <span>0</span>
+              <span id="totalQuiz"></span>
             </div>
             <div>
               <i class="bx bxs-graduation"></i>
 
               <p>Total Students</p>
 
-              <span>9</span>
+              <span id="totalStudents"></span>
             </div>
             <div>
-              <button>Top Three Students</button>
+              <button id="topThreeStudent">Top Three Students</button>
             </div>
+          </div>
+
+          <!-- //Page modal -->
+          <div id="pageModal">
+            <svg
+              class="pl"
+              viewBox="0 0 200 200"
+              width="200"
+              height="200"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <defs>
+                <linearGradient id="pl-grad1" x1="1" y1="0.5" x2="0" y2="0.5">
+                  <stop offset="0%" stop-color="#808080" />
+                  <stop offset="100%" stop-color="hsl(223,90%,55%)" />
+                </linearGradient>
+                <linearGradient id="pl-grad2" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#808080" />
+                  <stop offset="100%" stop-color="hsl(223,90%,55%)" />
+                </linearGradient>
+              </defs>
+              <circle
+                class="pl__ring"
+                cx="100"
+                cy="100"
+                r="82"
+                fill="none"
+                stroke="url(#pl-grad1)"
+                stroke-width="36"
+                stroke-dasharray="0 257 1 257"
+                stroke-dashoffset="0.01"
+                stroke-linecap="round"
+                transform="rotate(-90,100,100)"
+              />
+              <line
+                class="pl__ball"
+                stroke="url(#pl-grad2)"
+                x1="100"
+                y1="18"
+                x2="100.01"
+                y2="182"
+                stroke-width="36"
+                stroke-dasharray="1 165"
+                stroke-linecap="round"
+              />
+            </svg>
+          </div>
+
+          <!-- //Student Modal -->
+          <div id="studentModal">
+            <div id="studentModalTitle">
+              <span>Top Three Students</span>
+              <i class="bx bx-x" onclick="closeStudentModal()"></i>
+            </div>
+            <div id="topThreeScores"></div>
+          </div>
+
+          <!-- //All Students Table -->
+          <div class="table">
+            <table>
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Phone Number</th>
+                  <th>Position</th>
+                  <th>Total Score</th>
+                </tr>
+              </thead>
+              <tbody id="allStudents"></tbody>
+            </table>
           </div>
         </div>
       </section>

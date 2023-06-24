@@ -327,3 +327,16 @@ li.hovered {
     }
   }
 }
+
+#pageModal,
+#studentModal,
+.table {
+  position: absolute;
+  display: none;
+  justify-content: center;
+  align-items: center;
+
+  svg {
+    display: none;
+  }
+}
