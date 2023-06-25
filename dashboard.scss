@@ -158,6 +158,7 @@ body {
         color: $YA-mainTheme;
         width: 100%;
         padding: 1rem;
+        padding-top: 0.8rem;
 
         .container {
           @include YA-FLex-2;
@@ -173,9 +174,15 @@ body {
           .sec-header {
             display: flex;
             font-size: x-large;
+            gap: 2rem;
+            align-items: center;
 
             i {
               cursor: pointer;
+            }
+
+            h3 {
+              text-transform: capitalize;
             }
           }
 
@@ -244,9 +251,115 @@ body {
               }
             }
           }
+
+          .page-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .loader {
+              border: 16px solid #f3f3f3;
+              border-top: 16px solid #3498db;
+              border-radius: 50%;
+              width: 120px;
+              height: 120px;
+              animation: spin 2s linear infinite;
+            }
+          }
+
+          @keyframes spin {
+            0% {
+              transform: rotate(0deg);
+            }
+            100% {
+              transform: rotate(360deg);
+            }
+          }
+
+          .student-modal {
+            display: none;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            width: 360px;
+            height: 500px;
+
+            @include respond(small) {
+              position: fixed;
+              width: 300px;
+            }
+
+            .student-modal-title {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+            }
+
+            i {
+              cursor: pointer;
+              font-size: large;
+            }
+          }
+
+          .table {
+            display: none;
+            flex-direction: column;
+            width: 100%;
+
+            thead {
+              tr {
+                display: flex;
+                justify-content: space-between;
+
+                width: 100%;
+              }
+            }
+          }
         }
       }
     }
+  }
+}
+
+.show {
+  background-color: $YA-white;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: $YA-grey 1px solid;
+  border-radius: 8px;
+  padding: 1rem;
+  @include YA-FLex-2;
+  flex-direction: column;
+  gap: 0.5rem;
+  box-shadow: 0px 20px 10px rgba(93, 93, 94, 0.2);
+  border-top: none;
+}
+
+.search-card {
+  display: flex;
+  flex-direction: column;
+  margin-top: 0.5rem;
+  border-top: $YA-mainTheme 1px solid;
+  padding-top: 0.5rem;
+
+  .card {
+    display: flex;
+    gap: 5px;
   }
 }
 
@@ -325,18 +438,5 @@ li.hovered {
         }
       }
     }
-  }
-}
-
-#pageModal,
-#studentModal,
-.table {
-  position: absolute;
-  display: none;
-  justify-content: center;
-  align-items: center;
-
-  svg {
-    display: none;
   }
 }

@@ -42,38 +42,42 @@ function fetchDashboardData() {
 
   // STEP 3
   const authToken = localStorage.getItem("adminObj");
-  const tokenAcquired = JSON.parse(authToken);
-  const token = tokenAcquired.token;
 
   // STEP 4
-  const headers = new Headers();
+  const tokenAcquired = JSON.parse(authToken);
 
   // STEP 5
-  headers.append("Authorization", `Bearer ${token}`);
+  const token = tokenAcquired.token;
 
   // STEP 6
+  const headers = new Headers();
+
+  // STEP 7
+  headers.append("Authorization", `Bearer ${token}`);
+
+  // STEP 8
   const request = {
     method: "GET",
     headers: headers,
   };
 
-  // STEP 7
+  // STEP 9
   const URL =
     "https://pluralcodesandbox.com/yorubalearning/api/admin/admin_dashboardapi";
 
-  // STEP 8
+  // STEP 9b
   const resultData = [];
 
-  // STEP 9
+  // STEP 10
   fetch(URL, request)
-    // STEP 10
+    // STEP 11
     .then((response) => response.json())
 
-    // STEP 11
+    // STEP 12
     .then((result) => {
       console.log(result);
 
-      // STEP 12
+      // STEP 13 & 14
       const getCategory = document.getElementById("category");
       getCategory.innerHTML = `${result.total_number_of_categories}`;
 
@@ -92,12 +96,112 @@ function fetchDashboardData() {
       const getAdminUsername = document.getElementById("adminUsername");
       getAdminUsername.innerHTML = `${result.admin_name}`;
 
-      // STEP 13
+      // STEP 15
       pageModal.style.display = "none";
     })
-    // STEP 14
+    // STEP 15b
     .catch((error) => console.log("error", error));
 }
 
-// STEP 15
+// STEP 16
 fetchDashboardData();
+
+// Top 3 students
+// STEP 1
+const topThreeStudentsBtn = document.getElementById("topThreeStudent");
+
+// STEP 2
+topThreeStudentsBtn.addEventListener("click", (event) => {
+  // STEP 3
+  event.preventDefault();
+
+  // STEP 4
+  const studentModal = document.getElementById("studentModal");
+
+  studentModal.style.display = "block";
+
+  // STEP 5
+  const authToken = localStorage.getItem("adminObj");
+  const tokenAcquired = JSON.parse(authToken);
+  const token = tokenAcquired.token;
+
+  // STEP 6
+  const headers = new Headers();
+
+  // STEP 7
+  headers.append("Authorization", `Bearer ${token}`);
+
+  // STEP 8
+  const request = {
+    method: "GET",
+    headers: headers,
+  };
+
+  // STEP 9
+  const URL =
+    "https://pluralcodesandbox.com/yorubalearning/api/admin/top_three_students";
+
+  // STEP 10
+  const resultData = [];
+
+  // STEP 11
+  fetch(URL, request)
+    // STEP 12
+    .then((response) => response.json())
+
+    // STEP 13
+    .then((result) => {
+      console.log(result);
+      // STEP 14
+      const getBestStudents = document.getElementById("topThreeScores");
+
+      // STEP 15
+      if (result.length === 0) {
+        getBestStudents.innerHTML = "No Information Found";
+      }
+
+      // STEP 16
+      result.map((item) => {
+        resultData.push(`
+          <div class="search-card">
+            <div class="card">
+              <p>Name:</p>
+              <p>${item.name}</p>
+            </div>
+            <div class="card">
+              <p>Email:</p>
+              <p>${item.email}</p>
+            </div>
+            <div class="card">
+              <p>Phone Number:</p>
+              <p>${item.phone_number}</p>
+            </div>
+            <div class="card">
+              <p>Position:</p>
+              <p>${item.position}</p>
+            </div>
+            <div class="card">
+              <p>Total Score:</p>
+              <p>${item.total_score}</p>
+            </div>
+          </div>
+        `);
+      });
+
+      // STEP 17
+      getBestStudents.innerHTML = resultData.join("");
+
+      // STEP 18
+      studentModal.classList.add("show");
+    })
+    // STEP 19
+    .catch((error) => {
+      console.log("Error:", error);
+    });
+});
+
+// Function to close the student modal
+function closeStudentModal() {
+  const studentModal = document.getElementById("studentModal");
+  studentModal.style.display = "none";
+}
