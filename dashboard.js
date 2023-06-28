@@ -205,3 +205,73 @@ function closeStudentModal() {
   const studentModal = document.getElementById("studentModal");
   studentModal.style.display = "none";
 }
+
+// GET ALL STUDENTS
+
+// STEP 1 - Create a function that gets all students
+function fetchAllStudents() {
+  const table = document.getElementById("table");
+  table.style.display = "block";
+  // STEP 2
+  const authToken = localStorage.getItem("adminObj");
+
+  // STEP 3
+  const tokenAcquired = JSON.parse(authToken);
+
+  // STEP 4
+  const token = tokenAcquired.token;
+
+  // STEP 5
+  const headers = new Headers();
+  headers.append("Authorization", `Bearer ${token}`);
+
+  // STEP 6
+  const request = {
+    method: "GET",
+    headers: headers,
+  };
+
+  // STEP 7
+  const resultData = [];
+
+  // STEP 8
+  const URL =
+    "https://pluralcodesandbox.com/yorubalearning/api/admin/get_all_students";
+
+  // STEP 9
+  fetch(URL, request)
+    // STEP 10
+    .then((response) => response.json())
+
+    // STEP 10
+    .then((result) => {
+      console.log(result);
+
+      // STEP 10
+      const tableContainer = document.getElementById("allStudents");
+
+      // STEP 10
+      if (result.length === 0) {
+        tableContainer.innerHTML = "No Registered Student";
+      } else {
+        result.map((item) => {
+          resultData.push(`
+            <tr>
+              <td>${item.name}</td>
+              <td>${item.email}</td>
+              <td>${item.phone_number}</td>
+              <td>${item.position}</td>
+              <td>${item.total_score}</td>
+            </tr>
+          `);
+        });
+
+        tableContainer.innerHTML = resultData.join("");
+      }
+    })
+    // STEP 10
+    .catch((error) => console.log("Error:", error));
+}
+
+// STEP 11 - Call the fetchAllStudents function
+fetchAllStudents();

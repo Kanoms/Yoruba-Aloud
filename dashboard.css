@@ -180,7 +180,7 @@ body main {
 body main section:first-of-type {
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: auto;
   background-color: #4594e1;
 }
 @media (max-width: 768px) {
@@ -193,7 +193,7 @@ body main section:first-of-type .container {
   position: fixed;
   height: 100%;
   background-color: #4594e1;
-  overflow: hidden;
+  overflow-y: hidden;
   width: 300px;
   margin-left: 0.5rem;
 }
@@ -454,13 +454,53 @@ body main section:last-of-type .container .student-modal i {
 }
 body main section:last-of-type .container .table {
   display: none;
-  flex-direction: column;
   width: 100%;
+  overflow: scroll;
 }
-body main section:last-of-type .container .table thead tr {
-  display: flex;
-  justify-content: space-between;
+body main section:last-of-type .container .table table {
   width: 100%;
+  border: black 1px solid;
+  border-collapse: collapse;
+}
+body main section:last-of-type .container .table table thead tr th {
+  border: black 1px solid;
+  border-collapse: collapse;
+  background-color: #4594e1;
+  color: #fff;
+  padding: 0.5rem;
+}
+@media (max-width: 991px) {
+  body main section:last-of-type .container .table table thead tr th {
+    padding: 0.5rem 0;
+    font-size: medium;
+  }
+}
+@media (max-width: 768px) {
+  body main section:last-of-type .container .table table thead tr th {
+    padding: 0.5rem 0;
+    font-size: medium;
+  }
+}
+body main section:last-of-type .container .table table tbody {
+  text-align: center;
+}
+body main section:last-of-type .container .table table tbody tr td {
+  border: black 1px solid;
+  border-collapse: collapse;
+  color: black;
+  padding: 0.5rem;
+}
+@media (max-width: 991px) {
+  body main section:last-of-type .container .table table tbody tr td {
+    font-size: small;
+    padding: 0.5rem 0;
+  }
+}
+@media (max-width: 768px) {
+  body main section:last-of-type .container .table table tbody tr td {
+    font-size: small;
+    padding: 0.5rem 0;
+  }
 }
 
 .show {
