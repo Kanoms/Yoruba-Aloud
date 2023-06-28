@@ -243,14 +243,14 @@ function fetchAllStudents() {
     // STEP 10
     .then((response) => response.json())
 
-    // STEP 10
+    // STEP 10a
     .then((result) => {
       console.log(result);
 
-      // STEP 10
+      // STEP 10b
       const tableContainer = document.getElementById("allStudents");
 
-      // STEP 10
+      // STEP 10c
       if (result.length === 0) {
         tableContainer.innerHTML = "No Registered Student";
       } else {
@@ -269,7 +269,7 @@ function fetchAllStudents() {
         tableContainer.innerHTML = resultData.join("");
       }
     })
-    // STEP 10
+    // STEP 10d
     .catch((error) => console.log("Error:", error));
 }
 

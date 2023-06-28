@@ -317,17 +317,16 @@ body {
           .table {
             display: none;
             width: 100%;
+            overflow-x: auto;
+            white-space: nowrap;
 
             table {
               width: 100%;
-              border: black 1px solid;
               border-collapse: collapse;
-              display: block;
-              overflow-x: auto;
-              white-space: nowrap;
 
               thead {
                 tr {
+                  border: black 1px solid;
                   th {
                     border: black 1px solid;
                     border-collapse: collapse;
@@ -350,7 +349,7 @@ body {
 
               tbody {
                 text-align: center;
-
+                border: black 1px solid;
                 tr {
                   td {
                     border: black 1px solid;
