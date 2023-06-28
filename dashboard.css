@@ -455,12 +455,14 @@ body main section:last-of-type .container .student-modal i {
 body main section:last-of-type .container .table {
   display: none;
   width: 100%;
-  overflow: scroll;
 }
 body main section:last-of-type .container .table table {
   width: 100%;
   border: black 1px solid;
   border-collapse: collapse;
+  display: block;
+  overflow-x: auto;
+  white-space: nowrap;
 }
 body main section:last-of-type .container .table table thead tr th {
   border: black 1px solid;

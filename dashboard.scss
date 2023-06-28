@@ -317,12 +317,14 @@ body {
           .table {
             display: none;
             width: 100%;
-            overflow: scroll;
 
             table {
               width: 100%;
               border: black 1px solid;
               border-collapse: collapse;
+              display: block;
+              overflow-x: auto;
+              white-space: nowrap;
 
               thead {
                 tr {
