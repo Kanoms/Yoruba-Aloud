@@ -319,6 +319,8 @@ body {
             width: 100%;
             overflow-x: auto;
             white-space: nowrap;
+            overflow-y: scroll;
+            height: 100%;
 
             table {
               width: 100%;
