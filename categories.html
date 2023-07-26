@@ -37,7 +37,7 @@
             </li>
 
             <li id="list">
-              <a href="">
+              <a href="dashboard.html">
                 <span class="icon"><i class="bx bx-home"></i></span>
                 <span class="title">Dashboard</span>
               </a>
@@ -144,20 +144,27 @@
             <div id="topThreeScores"></div>
           </div>
 
-          <!-- //All Students Table -->
-          <div class="table" id="table">
-            <table>
-              <thead>
-                <tr>
-                  <th>Name</th>
-                  <th>Email</th>
-                  <th>Phone Number</th>
-                  <th>Position</th>
-                  <th>Total Score</th>
-                </tr>
-              </thead>
-              <tbody id="allStudents"></tbody>
-            </table>
+          <!-- //FORM -->
+          <div class="catergory">
+            <form class="" id="createCategoryForm">
+              <div>
+                <label for="categoryName">Category</label>
+                <input
+                  type="text"
+                  placeholder="Enter the catergory name"
+                  id="categoryName"
+                  required
+                />
+              </div>
+              <div>
+                <label for="categoryImage">Category Image</label>
+                <input type="file" id="categoryImage" required />
+              </div>
+              <div>
+                <!-- STEP 2 -->
+                <button id="createCategoryBtn">Create Category</button>
+              </div>
+            </form>
           </div>
         </div>
       </section>
@@ -166,5 +173,6 @@
     <!-- SCRIPT  -->
 
     <script src="dashboard.js"></script>
+    <script src="categories.js"></script>
   </body>
 </html>
