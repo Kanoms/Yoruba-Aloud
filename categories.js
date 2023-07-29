@@ -6,21 +6,22 @@ const createCategoryBtn = document.getElementById("createCategoryBtn");
 
 createCategoryBtn.addEventListener("click", createCategory);
 
-function createCategory() {
+function createCategory(event) {
+  event.preventDefault();
   // STEP 3
   createCategoryBtn.classList.add("pulse");
   createCategoryBtn.textContent = "Sending...";
 
   // STEP 4a
-  const categoryName = categoryNameInput.value.trim();
-  const categoryImage = categoryImageInput.value.trim();
+  const categoryName = categoryNameInput.value;
+  const categoryImage = categoryImageInput.files[0];
 
   if (categoryName === "" || categoryImage === "") {
     alert("All fields are required");
     // STEP 4b
     createCategoryBtn.classList.remove("pulse");
     createCategoryBtn.textContent = "Create Category";
-    return;
+    // return;
   }
 
   // STEP 5
@@ -54,12 +55,12 @@ function createCategory() {
     .then((response) => response.json())
     // STEP 12
     .then((result) => {
-      console.log(result);
+      console.log(result.message);
       // STEP 13
       if (result.status === "success") {
         alert("Category successfully created");
         setTimeout(() => {
-          window.location.href = "categories.html";
+          location.href = "categories.html";
         }, 5000);
       } else {
         // STEP 14
