@@ -9,7 +9,7 @@ createCategoryBtn.addEventListener("click", createCategory);
 function createCategory() {
   // STEP 3
   createCategoryBtn.classList.add("pulse");
-  createCategoryBtn.textContent = "Sending";
+  createCategoryBtn.textContent = "Sending...";
 
   // STEP 4a
   const categoryName = categoryNameInput.value.trim();
